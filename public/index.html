@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Memory</title>
+</head>
+<body>
+  <h1>Want2Remember - Add Memory</h1>
+  <form id="memoryForm">
+    <label>Title:</label><br>
+    <input type="text" id="title" required><br><br>
+
+    <label>Note:</label><br>
+    <textarea id="note" required></textarea><br><br>
+
+    <button type="submit">Save Memory</button>
+  </form>
+
+  <script>
+    document.getElementById("memoryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const note = document.getElementById("note").value;
+
+      console.log("Memory saved:", { title, note });
+
+      alert("Memory saved (in console for now)!");
+    });
+  </script>
+</body>
+</html>

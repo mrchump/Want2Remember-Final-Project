@@ -1,0 +1,77 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember User Manual}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{\Huge User Manual\\[0.5em]\LARGE Want2Remember}
+\author{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\date{May 06, 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Want2Remember is a web-based application designed to help users store, view, and delete short memory entries. Built using HTML, CSS, and JavaScript, it persists data via the browser’s \texttt{localStorage}. The app is styled for clarity and accessibility and runs either locally or within a Docker container.
+
+\section{Project Objectives}
+\begin{itemize}
+  \item Build a memory tracking app for cognitive and practical memory support
+  \item Implement localStorage-based persistence
+  \item Provide a clean and simple UI with delete support
+  \item Integrate Docker, Jira, and TestRail for a complete dev lifecycle
+\end{itemize}
+
+\section{Jira Board}
+You can view the team's sprint planning and task breakdown here:  
+\url{https://YOUR-JIRA-BOARD-URL}
+
+\section{How to Access the App}
+\subsection*{Run Locally}
+\begin{enumerate}
+  \item Download the GitHub repository from:  
+  \url{https://github.com/kbthepioneer/Want2Remember-Final-Project}
+  \item Open the `public/index.html` file in your browser
+\end{enumerate}
+
+\subsection*{Run via Docker}
+\begin{enumerate}
+  \item Ensure Docker Desktop is running
+  \item In your terminal, navigate to the root folder
+  \item Run: \texttt{docker-compose up --build}
+  \item Open your browser and go to: \texttt{http://localhost:8080}
+\end{enumerate}
+
+\section{Features}
+\begin{itemize}
+  \item Add memory (title + note)
+  \item View list of saved memories
+  \item Delete individual memories
+  \item Persistent data storage using localStorage
+  \item Styled UI with dark theme and responsive layout
+\end{itemize}
+
+\section{Why This Software Matters}
+Want2Remember helps users record and remember small pieces of information like notes, reminders, or interactions. It simulates real-world note-taking or digital journaling — all stored in the user's browser.
+
+\section{Future Enhancements}
+\begin{itemize}
+  \item Add authentication and login
+  \item Enable tagging, search, and filtering
+  \item Migrate to backend database (e.g., Firebase or MongoDB)
+  \item Add image and file attachments
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,104 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember SRS}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{\Huge Software Requirements Specification\\[0.5em]\LARGE Want2Remember}
+\author{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\date{May 06, 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\begin{longtable}{|p{3cm}|p{3cm}|p{6cm}|p{4cm}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Authors} \\
+\hline
+v1.0 & 04/15/2025 & Initial requirement draft & Kevin \& Niko \\
+\hline
+v2.0 & 04/22/2025 & Added persistence and validation logic & Kevin \& Niko \\
+\hline
+v3.0 & 04/29/2025 & Included delete features and UI polish & Kevin \& Niko \\
+\hline
+v4.0 & 05/05/2025 & Final LaTeX formatting + requirement check & Kevin \& Niko \\
+\hline
+\end{longtable}
+
+\section{Introduction}
+\subsection*{Purpose}
+This document defines the functional, non-functional, and system requirements for Want2Remember, a single-page web application to help users store personal memories.
+
+\subsection*{Intended Audience}
+This document is intended for the course instructor, student developers, and evaluators reviewing the software requirements of the final project.
+
+\subsection*{Overview}
+Want2Remember enables users to add, view, and delete memory entries. Data persists using browser-based `localStorage`. The app is styled for accessibility and runs locally or in a Docker container.
+
+\section{External Interface Requirements}
+
+\subsection*{User Interfaces}
+The UI includes:
+\begin{itemize}
+    \item A memory input form (title + note)
+    \item A list of stored memories styled as cards
+    \item Delete button next to each memory
+    \item Responsive layout and dark-themed styling
+\end{itemize}
+
+\subsection*{Software Interfaces}
+\begin{itemize}
+    \item JavaScript DOM interaction
+    \item Browser `localStorage` API
+    \item Runs locally in browser or via Docker
+\end{itemize}
+
+\section{Functional Requirements}
+\begin{itemize}
+    \item Users can enter memory title and note
+    \item Users can submit a memory using a form
+    \item App stores the memory in `localStorage`
+    \item App displays all saved memories in a styled list
+    \item Users can delete memories with a ❌ button
+    \item Deleted memories do not reappear on refresh
+\end{itemize}
+
+\section{Legal and Ethical Considerations}
+\begin{itemize}
+    \item No user accounts or private data stored
+    \item All data is saved only in the user's browser
+    \item Future versions may require data encryption if cloud sync is implemented
+    \item Accessibility: UI designed with simplicity and readability in mind
+\end{itemize}
+
+\section{Glossary}
+\begin{itemize}
+    \item CRUD – Create, Read, Update, Delete
+    \item UI – User Interface
+    \item API – Application Programming Interface
+    \item DOM – Document Object Model
+    \item localStorage – Key-value browser storage for user data
+\end{itemize}
+
+\section{References}
+\begin{itemize}
+    \item \url{https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage}
+    \item \url{https://www.atlassian.com/software/jira}
+    \item \url{https://overleaf.com}
+\end{itemize}
+
+\end{document}

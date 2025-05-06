@@ -1,0 +1,91 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember SDD}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{\Huge Software Design Document\\[0.5em]\LARGE Want2Remember}
+\author{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\date{May 06, 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\begin{longtable}{|p{3cm}|p{3cm}|p{6cm}|p{4cm}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Authors} \\
+\hline
+v1.0 & 04/15/2025 & Initial draft with base project layout & Kevin \& Niko \\
+\hline
+v2.0 & 04/22/2025 & Added localStorage + UI updates & Kevin \& Niko \\
+\hline
+v3.0 & 04/29/2025 & Delete functionality + Docker + Jira integration & Kevin \& Niko \\
+\hline
+v4.0 & 05/05/2025 & Final UI styling, TestRail integration, LaTeX prep & Kevin \& Niko \\
+\hline
+\end{longtable}
+
+\section{Introduction}
+\subsection*{Purpose}
+This document outlines the design and architectural strategy for Want2Remember, a memory-saving app built with HTML/CSS/JS and served via Docker.
+
+\subsection*{Intended Audience}
+This document is intended for the course instructor, classmates, project collaborators, and evaluators reviewing the final design.
+
+\subsection*{Overview}
+Want2Remember is a browser-based single-page application that allows users to store, view, and delete short memory entries using \texttt{localStorage}.
+
+\section{System Architecture}
+\begin{itemize}
+  \item \textbf{Frontend:} HTML, CSS, JavaScript
+  \item \textbf{Storage:} localStorage
+  \item \textbf{Deployment:} Docker (NGINX)
+  \item \textbf{Testing:} TestRail (Snapshots 2--4)
+  \item \textbf{Project Tracking:} Jira (Sprint-based)
+\end{itemize}
+
+\subsection*{Workflow Diagram Description}
+User accesses a form $\rightarrow$ submits memory $\rightarrow$ JavaScript stores it in \texttt{localStorage} $\rightarrow$ display updates dynamically $\rightarrow$ memory reloaded on refresh $\rightarrow$ user can delete memory $\rightarrow$ \texttt{localStorage} updates.
+
+\section{User Interface}
+\subsection*{Form}
+The user can enter a memory title and note. Submissions are validated.
+
+\subsection*{Memory Display}
+The memory list shows saved entries styled as individual cards with delete functionality.
+
+\subsection*{Visual Styling}
+Dark gray background, white memory cards, responsive layout, clean spacing, and contrast.
+
+\section{Glossary}
+\begin{itemize}
+  \item CRUD -- Create, Read, Update, Delete
+  \item UI -- User Interface
+  \item DOM -- Document Object Model
+  \item Docker -- Container system to simulate a hosted environment
+  \item localStorage -- Persistent key-value store in browser
+\end{itemize}
+
+\section{References}
+\begin{itemize}
+  \item \url{https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage}
+  \item \url{https://hub.docker.com/_/nginx}
+  \item \url{https://www.atlassian.com/software/jira}
+  \item \url{https://overleaf.com}
+\end{itemize}
+
+\end{document}

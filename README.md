@@ -110,7 +110,7 @@ Project}}{How to Run the Project}}\label{how-to-run-the-project}}
 
 \hypertarget{option-1-run-locally}{%
 \subsubsection{\texorpdfstring{\textbf{�� Option 1: Run
-Locally}}{�� Option 1: Run Locally}}\label{option-1-run-locally}}
+Locally}}{�� Option 1: Run locally}}\label{option-1-run-locally}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}

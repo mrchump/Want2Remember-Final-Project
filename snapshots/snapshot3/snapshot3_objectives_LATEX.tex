@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\begin{document}
+
+% Fully centered title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries Snapshot 3 Objective Plan \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Snapshot: 3 (Checkpoint 2)}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+% Main content starts here
+\section*{Goals for Snapshot 3}
+\begin{itemize}
+  \item Add another large feature: Delete Memory functionality
+  \item Update memory list UI to include a delete button next to each memory
+  \item Update logic to remove memory from both the list and localStorage
+\end{itemize}
+
+\section*{New Features Being Added}
+\begin{itemize}
+  \item Delete button (X) appears next to each memory
+  \item Clicking delete removes the memory from the UI
+  \item Updated localStorage to persist deletion across refresh
+\end{itemize}
+
+\section*{Tasks \& Objectives}
+\begin{itemize}
+  \item Update JavaScript to attach delete functionality to each memory
+  \item Remove memory from the in-memory array and localStorage
+  \item Update the UI dynamically after deletion
+  \item Prepare for future enhancements (e.g. Edit memory)
+\end{itemize}
+
+\section*{Test Objectives (for Snapshot 3)}
+\begin{itemize}
+  \item Deleting a memory removes it from the list
+  \item Deleted memory is no longer in localStorage after refresh
+  \item UI updates instantly without page reload
+  \item Deleting multiple entries works as expected
+\end{itemize}
+
+\end{document}

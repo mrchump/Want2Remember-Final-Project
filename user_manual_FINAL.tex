@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember User Manual}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+% Standalone centered title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries User Manual \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Final Documentation – May 6, 2025}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Want2Remember is a web-based application designed to help users store, view, and delete short memory entries. Built using HTML, CSS, and JavaScript, it persists data via the browser’s \texttt{localStorage}. The app is styled for clarity and accessibility and runs either locally or within a Docker container.
+
+\section{Project Objectives}
+\begin{itemize}
+  \item Build a memory tracking app for cognitive and practical memory support
+  \item Implement key functions: add, view, and delete memories
+  \item Design a clean and usable interface
+  \item Preserve data using local browser storage
+\end{itemize}
+
+\section{How to Run the Application}
+\begin{enumerate}
+  \item Clone the repository from GitHub:
+    \begin{verbatim}
+    git clone https://github.com/kbthepioneer/Want2Remember-Final-Project.git
+    \end{verbatim}
+  \item Open the \texttt{index.html} file in any web browser.
+  \item Alternatively, use a local development server or Docker setup.
+\end{enumerate}
+
+\section{How to Use the App}
+\begin{enumerate}
+  \item Enter a memory title and note in the input form.
+  \item Click \textbf{Save Memory} to add it to the memory list.
+  \item Each memory can be deleted by clicking the \textbf{X} button.
+  \item The app automatically saves all data using \texttt{localStorage}.
+\end{enumerate}
+
+\section{Troubleshooting \& Notes}
+\begin{itemize}
+  \item Make sure JavaScript is enabled in your browser.
+  \item For a clean refresh, clear browser localStorage and reload.
+  \item The app is designed for modern desktop and mobile browsers.
+\end{itemize}
+
+\section{Final Updates and Submission Summary}
+\begin{itemize}
+  \item Converted all snapshot objective documents to LaTeX and added standalone title pages.
+  \item Cleaned and finalized all SDD, SRS, design spec, and user manual documents.
+  \item Removed outdated \texttt{.docx} and older \texttt{.tex} versions.
+  \item Updated GitHub repository structure and confirmed successful push of all deliverables.
+\end{itemize}
+
+\end{document}

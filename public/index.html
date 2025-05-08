@@ -1,31 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Memory</title>
+  <title>Want2Remember</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #2e2e2e; /* softer dark gray */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #ffffff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    li button {
+      background-color: #dc3545;
+      padding: 5px 10px;
+      font-size: 14px;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h2 {
+      color: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
   <h1>Want2Remember - Add Memory</h1>
-  <form id="memoryForm">
-    <label>Title:</label><br>
-    <input type="text" id="title" required><br><br>
 
-    <label>Note:</label><br>
-    <textarea id="note" required></textarea><br><br>
+  <form id="memoryForm">
+    <label>Title:</label>
+    <input type="text" id="title" required>
+
+    <label>Note:</label>
+    <textarea id="note" required></textarea>
 
     <button type="submit">Save Memory</button>
   </form>
 
+  <h2>Saved Memories</h2>
+  <ul id="memoryList"></ul>
+
   <script>
-    document.getElementById("memoryForm").addEventListener("submit", function(event) {
+    const memoryForm = document.getElementById("memoryForm");
+    const memoryList = document.getElementById("memoryList");
+
+    let memories = JSON.parse(localStorage.getItem("memories")) || [];
+    memories.forEach((memory, index) => addMemoryToList(memory, index));
+
+    memoryForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
       const title = document.getElementById("title").value;
       const note = document.getElementById("note").value;
 
-      console.log("Memory saved:", { title, note });
+      const memory = { title, note };
+      memories.push(memory);
+      localStorage.setItem("memories", JSON.stringify(memories));
 
-      alert("Memory saved (in console for now)!");
+      addMemoryToList(memory, memories.length - 1);
+      memoryForm.reset();
+      alert("Memory saved!");
     });
+
+    function addMemoryToList(memory, index) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div>
+          <strong>${memory.title}</strong>
+          ${memory.note}
+        </div>
+        <button onclick="deleteMemory(${index})">❌</button>
+      `;
+      memoryList.appendChild(li);
+    }
+
+    function deleteMemory(index) {
+      memories.splice(index, 1);
+      localStorage.setItem("memories", JSON.stringify(memories));
+      memoryList.innerHTML = "";
+      memories.forEach((memory, index) => addMemoryToList(memory, index));
+    }
   </script>
 </body>
 </html>

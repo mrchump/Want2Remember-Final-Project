@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\begin{document}
+
+% Fully centered title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries Snapshot 2 Objective Plan \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Checkpoint: Snapshot 2 (Checkpoint 1)}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+% Main content starts here
+\section*{Goals for Snapshot 2}
+\begin{itemize}
+  \item Add a large new feature to the project: View Saved Memories
+  \item Expand the UI to display saved memories below the form
+  \item Prepare the structure for later enhancements: editing, deleting, or persistent storage (localStorage or backend)
+\end{itemize}
+
+\section*{Features Being Added}
+\begin{itemize}
+  \item A memory list displayed using JavaScript and \texttt{<ul>} elements
+  \item Function to dynamically render a newly added memory
+  \item Improve user experience: confirmation on save, form reset, and display updates
+\end{itemize}
+
+\section*{New Tasks \& Objectives}
+\begin{itemize}
+  \item Modify \texttt{index.html} to include a memory list section
+  \item Update script to store memory objects in a JavaScript array
+  \item Render added memories into the DOM without reloading
+  \item Prepare the logic to connect this data to localStorage (for Snapshot 3)
+\end{itemize}
+
+\section*{Test Objectives (Planning for TestRail)}
+\begin{itemize}
+  \item Test that memories display properly after submitting the form
+  \item Test that multiple entries can be added and appear correctly
+  \item Test that form fields reset after a memory is submitted
+\end{itemize}
+
+\section*{Next Steps for Snapshot 3}
+\begin{itemize}
+  \item Implement persistent memory storage using localStorage
+  \item Add feature to delete memories
+  \item Begin UI improvements (styling, formatting)
+\end{itemize}
+
+\end{document}

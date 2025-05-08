@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember SRS}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+% Centered standalone title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries Software Requirements Specification \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Final Documentation – May 6, 2025}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\begin{longtable}{|p{3cm}|p{3cm}|p{6cm}|p{4cm}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Authors} \\
+\hline
+v1.0 & 04/15/2025 & Initial requirement draft & Kevin \& Niko \\
+\hline
+v2.0 & 04/22/2025 & Added persistence and validation logic & Kevin \& Niko \\
+\hline
+v3.0 & 04/29/2025 & Included delete features and UI polish & Kevin \& Niko \\
+\hline
+v4.0 & 05/05/2025 & Final LaTeX formatting + requirement check & Kevin \& Niko \\
+\hline
+v5.0 & 05/07/2025 & Final SRS enhancements and structure updates & Kevin \& Niko \\
+\hline
+\end{longtable}
+
+\section{Introduction}
+\subsection*{Purpose}
+This document defines the functional, non-functional, and system requirements for Want2Remember, a single-page web application to help users store personal memories.
+
+\subsection*{Intended Audience}
+This document is intended for the course instructor, student developers, and evaluators reviewing the software requirements of the final project.
+
+\subsection*{Overview}
+Want2Remember enables users to add, view, and delete memory entries. Data persists using browser-based `localStorage`. The app is styled for accessibility and runs locally or in a Docker container.
+
+\section{Overall Description}
+\subsection*{Product Perspective}
+Want2Remember is a standalone single-page web application. It does not require login or backend services and is designed for quick deployment and use on any modern browser.
+
+\subsection*{Product Functions}
+\begin{itemize}
+    \item Add new memory entries (title + note)
+    \item Display all saved memories
+    \item Delete selected memories
+    \item Automatically persist data via localStorage
+\end{itemize}
+
+\subsection*{User Characteristics}
+The typical user is a student or casual user who wants to track reminders or personal notes. No technical knowledge is required.
+
+\subsection*{Assumptions and Dependencies}
+\begin{itemize}
+    \item JavaScript and localStorage must be enabled in the user’s browser
+    \item No internet connection required after app load
+    \item Runs best in Chrome, Firefox, or modern mobile browsers
+\end{itemize}
+
+\section{External Interface Requirements}
+\subsection*{User Interfaces}
+The UI includes:
+\begin{itemize}
+    \item A memory input form (title + note)
+    \item A list of stored memories styled as cards
+    \item Delete button next to each memory
+    \item Responsive layout and dark-themed styling
+\end{itemize}
+
+\subsection*{Software Interfaces}
+\begin{itemize}
+    \item JavaScript DOM interaction
+    \item Browser `localStorage` API
+    \item Runs locally in browser or via Docker
+\end{itemize}
+
+\section{Functional Requirements}
+\begin{itemize}
+    \item Users can enter memory title and note
+    \item Users can submit a memory using a form
+    \item App stores the memory in `localStorage`
+    \item App displays all saved memories in a styled list
+    \item Users can delete memories with a ❌ button
+    \item Deleted memories do not reappear on refresh
+\end{itemize}
+
+\section{Non-functional Requirements}
+\begin{itemize}
+    \item The app must function correctly in all modern browsers.
+    \item The UI should be responsive and accessible.
+    \item The app should not require internet access after initial loading.
+    \item Page reloads must not erase saved data.
+\end{itemize}
+
+\section{Legal and Ethical Considerations}
+\begin{itemize}
+    \item No user accounts or private data stored
+    \item All data is saved only in the user's browser
+    \item Future versions may require data encryption if cloud sync is implemented
+    \item Accessibility: UI designed with simplicity and readability in mind
+\end{itemize}
+
+\section{Test Plan Summary}
+\begin{itemize}
+    \item Validate memory is saved on form submission
+    \item Confirm deletion removes memory from UI and `localStorage`
+    \item Verify persistence across browser reloads
+    \item Check UI responsiveness on mobile and desktop
+\end{itemize}
+
+\section{Glossary}
+\begin{itemize}
+    \item CRUD – Create, Read, Update, Delete
+    \item UI – User Interface
+    \item API – Application Programming Interface
+    \item DOM – Document Object Model
+    \item localStorage – Key-value browser storage for user data
+\end{itemize}
+
+\section{References}
+\begin{itemize}
+  \item \url{https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage}
+  \item \url{https://hub.docker.com/_/nginx}
+  \item \url{https://www.docker.com/products/docker-desktop}
+  \item \url{https://overleaf.com}
+  \item \url{https://www.atlassian.com/software/jira}
+  \item \url{https://github.com/kbthepioneer/Want2Remember-Final-Project}
+\end{itemize}
+
+\section{Conclusion}
+This Software Requirements Specification (SRS) defines the intended functionality and behavior of the Want2Remember application. It outlines a lightweight, accessible tool for storing memory entries on the client side using browser technologies. The document provides a foundation for ongoing development and future enhancements.
+
+\end{document}

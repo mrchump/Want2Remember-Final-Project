@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember Snapshot Objectives}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+% Centered standalone title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries Snapshot Objectives Summary \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Final Review Edition – May 6, 2025}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Snapshot 1 – Start Objective}
+\begin{itemize}
+  \item Set up initial GitHub repository
+  \item Define project purpose and basic memory tracking functionality
+  \item Build and test memory form UI using HTML, CSS, and JavaScript
+  \item Create Snapshot 1 documentation (SDD, SRS, user manual)
+  \item Establish snapshot folder structure
+\end{itemize}
+
+\section{Snapshot 2 – 1st Checkpoint Objective}
+\begin{itemize}
+  \item Implement persistent memory storage with localStorage
+  \item Extend UI to display saved memory list
+  \item Enable live DOM updates after memory is added
+  \item Add basic input validation and feedback
+  \item Create Snapshot 2 documentation and update GitHub repo
+\end{itemize}
+
+\section{Snapshot 3 – 2nd Checkpoint Objective}
+\begin{itemize}
+  \item Implement delete memory feature with UI interaction
+  \item Attach delete button logic to each memory element
+  \item Ensure memory removal from array and localStorage
+  \item Dynamically update DOM without reload
+  \item Prepare for edit feature in next version
+\end{itemize}
+
+\section{Snapshot 4 – Final Objective}
+\begin{itemize}
+  \item Finalize all core features (add/view/delete/persist)
+  \item Complete UI polish and responsive layout
+  \item Re-test features using updated test plan
+  \item Ensure documentation is finalized in each snapshot folder
+  \item Push final changes to \texttt{kevin} branch on GitHub
+\end{itemize}
+
+\section{Final Snapshot Updates and LaTeX Integration}
+\begin{itemize}
+  \item Converted all snapshot objective documents (1--4) from Word to LaTeX with standalone centered title pages
+  \item Added the LaTeX versions to their respective GitHub snapshot folders
+  \item Ensured file naming consistency (e.g., \texttt{snapshotX\_objectives\_LATEX.tex})
+  \item Finalized and cleaned up outdated \texttt{.docx} files on GitHub
+  \item Verified project completeness and final deliverable structure
+\end{itemize}
+
+\end{document}

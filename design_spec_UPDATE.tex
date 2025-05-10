@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Want2Remember Design Spec}
+\lhead{Kevin Bayona-Galindo \\ Nikolazi Tartinsky}
+\cfoot{\thepage}
+
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+
+% Centered standalone title page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+    \vspace*{\fill}
+    \begin{center}
+        \HRule \\[0.5cm]
+        {\Huge \bfseries Design Specification \\[0.4cm]}
+        \HRule \\[1.5cm]
+        {\LARGE \textbf{Want2Remember Project}}\\[0.5cm]
+        {\Large Final Documentation – May 9, 2025}\\[2cm]
+        {\Large Kevin Bayona-Galindo \& Nikolazi Tartinsky \& Donald Lopez}\\[0.5cm]
+        {\large \today}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Overview}
+This document outlines the structure and component design of the Want2Remember application, including a breakdown of pages, tools, and supporting libraries. It also lists all packages and dependencies required to containerize the app via Docker.
+
+\section{Page \& Component Breakdown}
+
+\subsection*{1. Add Memory Form}
+\begin{itemize}
+  \item Fields: Title (input), Note (textarea)
+  \item Validation: HTML5 required attributes for both fields
+  \item Feedback: Confirmation message shown on save
+\end{itemize}
+
+\subsection*{2. Memory List Display}
+\begin{itemize}
+  \item Each memory item includes title, note, and delete button
+  \item List updates in real-time using JavaScript
+  \item Supports persistent storage using \texttt{localStorage}
+\end{itemize}
+
+\subsection*{3. Delete Memory Logic}
+\begin{itemize}
+  \item Clicking delete removes the memory from the UI and \texttt{localStorage}
+  \item Prevents memory loss across page reloads.
+\end{itemize}
+
+\subsection*{4. User Interface}
+\begin{itemize}
+  \item Layout styled with CSS (margin, font, spacing clean-up)
+  \item Responsive across devices
+\end{itemize}
+
+\subsection*{5. Search and Filter}
+\begin{itemize}
+  \item Add a search bar above Memory List
+  \item Javascript would filter displayed memories in real-time
+  \item Search match regardless of letter casing
+  \item Search displays "no search" if no match is present
+\end{itemize}
+
+\section{Containerization \& Dependencies}
+\begin{itemize}
+  \item Dockerfile used to containerize front-end
+  \item Lightweight nginx or live-server used for local testing
+  \item Minimal dependency footprint (no backend at this stage)
+\end{itemize}
+
+\section{Final Updates and Repository Integration}
+
+\begin{itemize}
+  \item Converted all snapshot objective documents (1--4) from Word to LaTeX with standalone centered title pages
+  \item Integrated a new feature for design specification
+  \item Integrated snapshot objective summaries into each snapshot folder and added a global summary in the project root
+  \item Finalized user-facing documentation including SDD, SRS, and design spec
+  \item Updated and cleaned repository structure; removed outdated \texttt{.docx} and redundant \texttt{.tex} files
+  \item Verified project completeness and final deliverable structure
+\end{itemize}
+
+\section{References}
+
+\begin{itemize}
+  \item \url{https://github.com/kbthepioneer/Want2Remember-Final-Project}
+  \item \url{https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage}
+  \item \url{https://hub.docker.com/_/nginx}
+  \item \url{https://www.docker.com/products/docker-desktop}
+  \item \url{https://overleaf.com}
+  \item \url{https://www.atlassian.com/software/jira}
+\end{itemize}
+
+\end{document}
